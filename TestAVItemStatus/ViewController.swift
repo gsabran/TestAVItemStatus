@@ -7,19 +7,50 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
+
+	@IBOutlet weak var label: UILabel!
+	var player: AVPlayer!
+	var item: AVPlayerItem!
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+
+		item = AVPlayerItem(url: URL(fileURLWithPath: Bundle.main.path(forResource: "video", ofType: "mp4")!))
+		player = AVPlayer(playerItem: item)
+
+
+		item.addObserver(
+			self,
+			forKeyPath: #keyPath(AVPlayerItem.status),
+			options: [.initial, .old, .new],
+			context: nil)
+
+		if player.currentItem?.status == .readyToPlay {
+			videoDidLoad()
+		}
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
+	func videoDidLoad() {
+		label.text = "video ready"
 	}
 
+	override func observeValue(forKeyPath keyPath: String?,
+	                           of object: Any?,
+	                           change: [NSKeyValueChangeKey : Any]?,
+	                           context: UnsafeMutableRawPointer?) {
 
+		guard let item = object as? AVPlayerItem
+			else { return }
+
+		if item.status == .readyToPlay {
+			DispatchQueue.main.async {
+				self.videoDidLoad()
+			}
+		}
+	}
 }
 

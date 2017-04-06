@@ -14,6 +14,7 @@
 		6FEBFBA11E96E46A0015F45C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FEBFB9F1E96E46A0015F45C /* LaunchScreen.storyboard */; };
 		6FEBFBAC1E96E46A0015F45C /* TestAVItemStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBFBAB1E96E46A0015F45C /* TestAVItemStatusTests.swift */; };
 		6FEBFBB71E96E46A0015F45C /* TestAVItemStatusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBFBB61E96E46A0015F45C /* TestAVItemStatusUITests.swift */; };
+		6FEBFBC51E96E4B80015F45C /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6FEBFBC41E96E4B80015F45C /* video.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		6FEBFBB21E96E46A0015F45C /* TestAVItemStatusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAVItemStatusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FEBFBB61E96E46A0015F45C /* TestAVItemStatusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAVItemStatusUITests.swift; sourceTree = "<group>"; };
 		6FEBFBB81E96E46A0015F45C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FEBFBC41E96E4B80015F45C /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				6FEBFB9D1E96E46A0015F45C /* Assets.xcassets */,
 				6FEBFB9F1E96E46A0015F45C /* LaunchScreen.storyboard */,
 				6FEBFBA21E96E46A0015F45C /* Info.plist */,
+				6FEBFBC41E96E4B80015F45C /* video.mp4 */,
 			);
 			path = TestAVItemStatus;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				6FEBFBA11E96E46A0015F45C /* LaunchScreen.storyboard in Resources */,
 				6FEBFB9E1E96E46A0015F45C /* Assets.xcassets in Resources */,
 				6FEBFB9C1E96E46A0015F45C /* Main.storyboard in Resources */,
+				6FEBFBC51E96E4B80015F45C /* video.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

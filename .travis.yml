@@ -1,0 +1,13 @@
+language: objective-c
+osx_image: xcode8.3
+cache:
+- bundler
+- cocoapods
+script:
+- set -o pipefail
+- xcodebuild
+  -project TestAVItemStatus.xcodeproj
+  -scheme TestAVItemStatus
+  -sdk iphonesimulator
+  -destination "platform=iOS Simulator,name=iPhone SE,OS=10.3"
+  build test | xcpretty --test
