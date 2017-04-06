@@ -21,6 +21,7 @@ class ViewController: UIViewController {
 
 		item = AVPlayerItem(url: URL(fileURLWithPath: Bundle.main.path(forResource: "video", ofType: "mp4")!))
 		player = AVPlayer(playerItem: item)
+		player.play()
 
 
 		item.addObserver(
