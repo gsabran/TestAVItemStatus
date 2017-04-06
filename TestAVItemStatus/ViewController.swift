@@ -21,7 +21,6 @@ class ViewController: UIViewController {
 
 		item = AVPlayerItem(url: URL(fileURLWithPath: Bundle.main.path(forResource: "video", ofType: "mp4")!))
 		player = AVPlayer(playerItem: item)
-		player.play()
 
 
 		item.addObserver(
@@ -33,6 +32,7 @@ class ViewController: UIViewController {
 		if player.currentItem?.status == .readyToPlay {
 			videoDidLoad()
 		}
+		player.play()
 	}
 
 	func videoDidLoad() {
