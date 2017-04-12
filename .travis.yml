@@ -10,4 +10,5 @@ script:
   -scheme TestAVItemStatus
   -sdk iphonesimulator
   -destination "platform=iOS Simulator,name=iPhone SE,OS=10.3"
+  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
   build test | xcpretty --test
