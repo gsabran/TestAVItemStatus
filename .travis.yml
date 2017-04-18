@@ -3,12 +3,15 @@ osx_image: xcode8.3
 cache:
 - bundler
 - cocoapods
+before_install:
+  - export IOS_SIMULATOR_UDID=`instruments -s devices | grep "iPhone SE (10.3" | awk -F '[ ]' '{print $4}' | awk -F '[\[]' '{print $2}' | sed 's/.$//'`
+  - echo $IOS_SIMULATOR_UDID
+  - open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID
 script:
-- set -o pipefail
 - xcodebuild
   -project TestAVItemStatus.xcodeproj
   -scheme TestAVItemStatus
   -sdk iphonesimulator
   -destination "platform=iOS Simulator,name=iPhone SE,OS=10.3"
   CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
-  build test | xcpretty --test
+  build test

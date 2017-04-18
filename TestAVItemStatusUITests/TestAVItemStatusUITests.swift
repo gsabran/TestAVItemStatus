@@ -17,7 +17,24 @@ class TestAVItemStatusUITests: XCTestCase {
     }
     
     func testExample() {
+		if XCUIApplication().staticTexts["Video not ready"].exists {
+			print("Button says: 'Video not ready'")
+		} else {
+			print("Button does't say 'Video not ready'")
+		}
 		sleep(5)
+		if XCUIApplication().staticTexts["Video not ready"].exists {
+			print("Button says: 'Video not ready'")
+        } else {
+            print("Button does't say 'Video not ready'")
+		}
+
+		var n = 10
+		while !XCUIApplication().staticTexts["video ready"].exists && n > 0 {
+			n -= 1
+			sleep(5)
+			print("Button does't say 'Video ready'")
+		}
 		if !XCUIApplication().staticTexts["video ready"].exists {
 			XCTFail()
 		}
